@@ -2,6 +2,11 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
+    id("com.google.gms.google-services")
+    id ("dagger.hilt.android.plugin")
+    id("org.jetbrains.kotlin.kapt")
+    id ("kotlin-parcelize")
 }
 
 android {
@@ -56,4 +61,33 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+//    implementation(libs.kotlinx.coroutines.android)
+//    implementation(libs.androidx.core.ktx.v170)
+//    implementation(libs.coil.compose)
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("androidx.core:core-ktx:1.7.0")
+
+    //navigation
+    implementation ("androidx.navigation:navigation-compose:2.7.7")
+    implementation("io.appwrite:sdk-for-android:5.1.0")
+
+    //Gson
+    implementation ("com.google.code.gson:gson:2.11.0")
+
+    //firebase
+    implementation ("com.google.firebase:firebase-analytics:22.1.2")
+    implementation( "com.google.firebase:firebase-firestore:25.1.1")
+    implementation ("com.google.firebase:firebase-auth:23.1.0")
+    implementation ("com.google.firebase:firebase-database:21.0.0")
+    implementation ("com.google.firebase:firebase-storage:21.0.1")
+
+    implementation (libs.hilt.android)
+    implementation ("com.google.dagger:hilt-android:2.48")
+    kapt ("com.google.dagger:hilt-android-compiler:2.48")
+
+    implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
+
+    implementation (libs.android.custom.toast.message)
 }
